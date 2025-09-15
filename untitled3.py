@@ -28,4 +28,15 @@ if st.button("Check Potability"):
     if prediction[0] == 1:
         st.success("✅ Water is Potable (Safe to Drink)")
     else:
+
         st.error("❌ Water is Not Potable (Unsafe to Drink)")
+
+import pickle
+
+# model save
+with open("model.pkl", "wb") as f:
+    pickle.dump(model, f)
+
+# scaler save
+with open("scaler.pkl", "wb") as f:
+    pickle.dump(scaler, f)
