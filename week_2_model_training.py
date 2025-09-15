@@ -35,6 +35,17 @@ model.fit(X_train, y_train)
 # Predictions
 y_pred = model.predict(X_test)
 
+import pickle
+
+# model save
+with open("model.pkl", "wb") as f:
+    pickle.dump(model, f)
+
+# scaler save
+with open("scaler.pkl", "wb") as f:
+    pickle.dump(scaler, f)
+
+
 # Evaluation
 accuracy = accuracy_score(y_test, y_pred)
 print("Model Accuracy:", accuracy)
